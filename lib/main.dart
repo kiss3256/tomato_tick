@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
@@ -91,6 +92,7 @@ class _PomodoroTimerState extends State<PomodoroTimer> {
   bool _isWorkTime = true;
   Timer? _timer;
   bool _autoStartNextPhase = true;
+  final AudioPlayer _audioPlayer = AudioPlayer();
 
   @override
   void initState() {
@@ -101,16 +103,20 @@ class _PomodoroTimerState extends State<PomodoroTimer> {
   @override
   void dispose() {
     _timer?.cancel();
+    _audioPlayer.dispose();
     super.dispose();
   }
 
   Future<void> _showNotification() async {
+    await _audioPlayer.play(AssetSource('notification.mp3'));
+
     const AndroidNotificationDetails androidPlatformChannelSpecifics = AndroidNotificationDetails(
       'tomato_tick_channel',
       '番茄钟通知',
       channelDescription: '番茄钟计时结束通知',
       importance: Importance.max,
       priority: Priority.high,
+      playSound: true,
     );
 
     const NotificationDetails platformChannelSpecifics = NotificationDetails(android: androidPlatformChannelSpecifics);
