@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resource>
+    <string name="notification_channel_id">tomato_tick_channel</string>
+    <string name="notification_channel_name">番茄钟通知</string>
+    <string name="notification_channel_description">番茄钟计时结束通知</string>
+</resource>

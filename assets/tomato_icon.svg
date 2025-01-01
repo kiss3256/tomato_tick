@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <!-- 叶子 -->
+    <path d="M256 80 C200 80 180 40 180 40 C180 40 220 60 256 60 C292 60 332 40 332 40 C332 40 312 80 256 80" fill="#4CAF50"/>
+    <!-- 茎 -->
+    <rect x="246" y="40" width="20" height="40" fill="#33691E"/>
+    <!-- 番茄主体 -->
+    <circle cx="256" cy="276" r="196" fill="#F44336"/>
+    <!-- 高光效果 -->
+    <circle cx="200" cy="200" r="60" fill="#FF8A80" opacity="0.3"/>
+</svg>
